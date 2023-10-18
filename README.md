@@ -142,18 +142,22 @@ spec:
             - containerPort: 3306
 
 ```
-☑️ Configure the sync policy to automatically apply changes when the Git repository is updated.
 
 ## ✅ Step 5: Run Application
-☑️ First run mysql using `` kubectl apply  kubernetes/mysql.yml `` command
-☑️ Run volume `` kubectl apply  kubernetes/persistentvolumeclaim.yaml `` command
-☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command
+☑️ First run mysql using `` kubectl apply  kubernetes/mysql.yml `` command.
+
+☑️ Run volume `` kubectl apply  kubernetes/persistentvolumeclaim.yaml `` command.
+
+☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command.
 
 ## ✅ Step 6: Update application
 ☑️ Authenticate you docker hub or docker registry .
+
 ☑️ Build and push your Docker image to your docker hub or registry.
+
 ☑️ Update build image tag this in deployment kubernetes yaml.
-☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command
+
+☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command.
 
 ## ✅ Conclsion: 
 We used  dockerized application on an Kubernetes cluster. This gave us a strong base for our deployment. After that, we update application by update image tag and push this in docker registry and also edit kubernetes yml for this image tag and run this yml.
