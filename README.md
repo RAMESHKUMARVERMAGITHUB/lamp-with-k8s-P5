@@ -9,7 +9,9 @@ Create an Kubernetes cluster if you don't already have one.You can create Kubern
  Dockerize your application by creating a Dockerfile that defines how your application should be packaged as a container. Build and push the Docker image to docker hub or docker registry.
 
 ## ✅ Step 3: Configure application yml
+
  ☑️ Here configure yml file  for `` service `` and `` deploymnet ``
+ 
  ```
 apiVersion: v1
 kind: Service
@@ -53,6 +55,7 @@ spec:
 
 ```
 ☑️ Configure volume mount for so that applaction upload file can store in single path  .
+
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -85,7 +88,9 @@ spec:
 ```
 
 ## ✅ Step 4: Mysql using k8s cluster
+
  ☑️ Create Mysql configuration
+ 
  ```
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -139,15 +144,16 @@ spec:
 ```
 ☑️ Configure the sync policy to automatically apply changes when the Git repository is updated.
 
-✅ Step 5: Run Application
+## ✅ Step 5: Run Application
 ☑️ First run mysql using `` kubectl apply  kubernetes/mysql.yml `` command
 ☑️ Run volume `` kubectl apply  kubernetes/persistentvolumeclaim.yaml `` command
 ☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command
 
-✅ Step 6: Update application
+## ✅ Step 6: Update application
 ☑️ Authenticate you docker hub or docker registry .
 ☑️ Build and push your Docker image to your docker hub or registry.
 ☑️ Update build image tag this in deployment kubernetes yaml.
 ☑️ Then run application using `` kubectl apply  kubernetes/app.yml `` command
 
-✅ Conclsion: We used  dockerized application on an Kubernetes cluster. This gave us a strong base for our deployment. After that, we update application by update image tag and push this in docker registry and also edit kubernetes yml for this image tag and run this yml.
+## ✅ Conclsion: 
+We used  dockerized application on an Kubernetes cluster. This gave us a strong base for our deployment. After that, we update application by update image tag and push this in docker registry and also edit kubernetes yml for this image tag and run this yml.
