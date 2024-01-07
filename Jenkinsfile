@@ -79,7 +79,7 @@ pipeline{
                 script {
                     dir('kubernetes') {
                         withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-                            sh 'kubectl apply -f mysql.ym'
+                            sh 'kubectl apply -f mysql.yml'
                             sh 'kubectl apply -f persistentvolumeclaim.yaml'
                             sh 'kubectl apply  -f app.yml'
                         }
