@@ -1,10 +1,10 @@
 <?php
 // Database connection parameters
-$db_hostname = "3.110.84.27";
+$db_hostname = "192.168.1.2";
 $db_port     = 3306;
 $db_database = "simple_lamp";
 $db_username = "root";
-$db_password = "ramesh";
+$db_password = "shihab";
 
 // Image upload options
 $storage_option = "hd";
