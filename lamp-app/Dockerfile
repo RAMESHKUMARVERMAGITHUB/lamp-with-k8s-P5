@@ -11,7 +11,7 @@ COPY . /var/www/html/
 
 # Install any additional dependencies or tools
 # For example, if using Composer for dependency management:
-RUN apt-get update && apt-get install -y composer
+# RUN apt-get update && apt-get install -y composer
 RUN composer install --no-dev
 
 # Expose the port the web server will run on
