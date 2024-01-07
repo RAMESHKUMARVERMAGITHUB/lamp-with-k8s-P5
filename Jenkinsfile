@@ -78,6 +78,7 @@ pipeline{
             steps{
                 script{
                     dir('lamp-app'){
+                        sh 'docker network create app-network'
                         sh 'docker-compose up -d'
                     }
                 }
