@@ -74,30 +74,30 @@ pipeline{
         //         sh "docker run -d --name amazon -p 4000:3000 rameshkumarverma/flaskapp:latest"
         //     }
         // }
-        stage('deploy_docker'){
-            steps{
-                script{
-                    dir('lamp-app'){
-                        // sh 'docker network create app-network'
-                        sh 'docker-compose build'
-                        sh 'docker-compose up -d'
+        // stage('deploy_docker'){
+        //     steps{
+        //         script{
+        //             dir('lamp-app'){
+        //                 // sh 'docker network create app-network'
+        //                 sh 'docker-compose build'
+        //                 sh 'docker-compose up -d'
+        //             }
+        //         }
+        //     }
+        // }
+      stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    dir('kubernetes') {
+                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                            sh 'kubectl apply -f mysql.yml'
+                            sh 'kubectl apply -f persistentvolumeclaim.yaml'
+                            sh 'kubectl apply  -f app.yml'
+                        }
                     }
                 }
             }
         }
-      // stage('Deploy to Kubernetes') {
-      //       steps {
-      //           script {
-      //               dir('kubernetes') {
-      //                   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-      //                       sh 'kubectl apply -f mysql.yml'
-      //                       sh 'kubectl apply -f persistentvolumeclaim.yaml'
-      //                       sh 'kubectl apply  -f app.yml'
-      //                   }
-      //               }
-      //           }
-      //       }
-      //   }
 
     }
 }
