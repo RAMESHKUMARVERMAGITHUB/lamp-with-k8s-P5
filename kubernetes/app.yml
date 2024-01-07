@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: lamp-app
-          image: rameshkumarverma/lamp-with-k8s-p5
+          image: shihab24/lamp:latest
           volumeMounts:
             - name: storage
               mountPath: /var/www/html/uploads
