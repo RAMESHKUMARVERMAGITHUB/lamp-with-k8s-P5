@@ -4,7 +4,7 @@ $db_hostname = "192.168.1.2";
 $db_port     = 3306;
 $db_database = "simple_lamp";
 $db_username = "root";
-$db_password = "shihab";
+$db_password = "ramesh";
 
 // Image upload options
 $storage_option = "hd";
